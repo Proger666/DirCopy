@@ -8,13 +8,17 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 public class Main {
-    static long sum;
+    static long sum = 0;
 
     public static void main(String[] args) throws InterruptedException {
         final long[] DirsSizes = new long[2];
         long dstDirSize;
         File srcDir = new File("c:\\temp");
-        File dstDir = new File("c:\\tempCopy");
+        File dstDir = new File("h:\\tempCopy");
+
+
+
+
 
 
         System.out.println("Lets copy only .txt files and directory structure \n");
@@ -38,8 +42,8 @@ public class Main {
         srcDirMeasureThread.join();
         dstDirMeasureThread.join();
 
-        System.out.println("Source directory size is: " + DirsSizes[0]);
-        System.out.println("Copied directory size is: " + DirsSizes[1]);
+        System.out.println("Source directory size is: " + DirsSizes[0] / 1024 / 1024);
+        System.out.println("Copied directory size is: " + DirsSizes[1] / 1024 / 1024);
 
 
         // write your code here
@@ -91,13 +95,15 @@ public class Main {
 
     private static long getDirSize(File srcDir) {
 
+
             if (srcDir.isFile()){
-                sum += srcDir.length();
-                return sum;
+               sum += srcDir.length();
         }
-            for (File curFile :
-                    srcDir.listFiles()) {
+        else {
+                for (File curFile :
+                        srcDir.listFiles()) {
                     getDirSize(curFile);
+                }
             }
         return sum;
 
