@@ -93,16 +93,17 @@ public class Main {
     }
 
 
-    private static long getDirSize(File srcDir) {
+    private synchronized static long getDirSize(File srcDir) {
 
 
+        long sum = 0;
             if (srcDir.isFile()){
                sum += srcDir.length();
         }
         else {
                 for (File curFile :
                         srcDir.listFiles()) {
-                    getDirSize(curFile);
+                    sum += getDirSize(curFile);
                 }
             }
         return sum;
