@@ -86,7 +86,6 @@ public class Main {
                 }
                 out.flush();
 
-
         } catch (IOException ex) {
             System.out.println("We screwed at copyFile, Files is " + srcDir.getName() + " and " + dstDir.getName());
         }
