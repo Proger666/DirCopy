@@ -3,9 +3,5 @@
   "children": [
     {
     "name":"vendors",
-    "children":[
-    
-	]
-	},
-	]
+    "children":[]}]
 }
