@@ -4,11 +4,7 @@
     {
     "name":"vendors",
     "children":[
-    {"name":"CHKP","value":"18.43"},
-    {"name":"FTNT","value":"14.6"},
-    {"name":"PANW","value":"22.43"},
-    {"name":"SPLK","value":"20.02"},
-    {"name":"CSCO","value":"234.89"}
+    
 	]
 	},
 	]
